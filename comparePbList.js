@@ -1,8 +1,12 @@
-function comparePbList(text) {
+function comparePbList(text, sutraName) {
   var obj = {};
+  if(undefined === text) {
+    return obj;
+  }
   var arrPb = text.replace(/<(pb id="\d+.\d+[abcd]")\/>\r?\n/g, 'pbIdTag$1')
               .replace(/<(jp="\d+.\d+[abcd]") \/>/g, '$1').replace(/\r/g, '')
               .replace(/<.+?>/g, '').split('pbIdTag');
+  sutraName = sutraName || 'comparedSutra';
   for (var i = 1; i < arrPb.length; i++) {
     var newPb, volNum;
     var lastMatchPbLength = 0;
@@ -12,8 +16,10 @@ function comparePbList(text) {
       return '';
     }).replace(/pb id="\d+.\d+[ab]"/, '')
     .replace(/jp="(\d+.\d+[abcd])"(.+?[་།])/g, function(match, oldPb, matchSyl, idx) {
-      obj[oldPb] = {'pb' : newPb, 'pos' : idx - lastMatchPbLength,
-                    'length' : matchSyl.length};
+      var infoObj = {};
+      infoObj[sutraName] = {'pb' : newPb, 'pos' : idx - lastMatchPbLength,
+                            'length' : matchSyl.length};
+      obj[oldPb] = infoObj;
       lastMatchPbLength = lastMatchPbLength + oldPb.length + 5;
       return '';
     });
