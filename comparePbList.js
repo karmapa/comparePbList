@@ -16,10 +16,8 @@ function comparePbList(text, sutraName) {
       return '';
     }).replace(/pb id="\d+.\d+[ab]"/, '')
     .replace(/jp="(\d+.\d+[abcd])"(.+?[་།])/g, function(match, oldPb, matchSyl, idx) {
-      var infoObj = {};
-      infoObj[sutraName] = {'pb' : newPb, 'pos' : idx - lastMatchPbLength,
-                            'length' : matchSyl.length};
-      obj[oldPb] = infoObj;
+      obj[oldPb] =  {'pb' : newPb, 'pos' : idx - lastMatchPbLength,
+                     'length' : matchSyl.length};
       lastMatchPbLength = lastMatchPbLength + oldPb.length + 5;
       return '';
     });
