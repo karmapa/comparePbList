@@ -6,7 +6,6 @@ compare two different sutra and generate a list
 
 ```javascript
 var comparePbList = require('compare-pb-list');
-<<<<<<< HEAD
 var out = comparePbList(text)
 /* out
 { '1.1a': { pb: '1.1a', pos: 0, length: 3 },
