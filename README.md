@@ -22,7 +22,7 @@ var out = comparePbList(text)
 {
   sutra page : {
     pb : compared sutra page,
-    pos: compared  text position,
+    pos: compared text position,
     length : compared text length 
   }
 }
