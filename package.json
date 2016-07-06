@@ -1,5 +1,5 @@
 {
-  "name": "comparepblist",
+  "name": "compare-pb-list",
   "version": "0.0.1",
   "description": "gen compare pb list",
   "main": "comparePbList.js",
