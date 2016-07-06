@@ -1,0 +1,24 @@
+{
+  "name": "comparepblist",
+  "version": "0.0.1",
+  "description": "gen compare pb list",
+  "main": "splitPb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karmapa/genComparePbList.git"
+  },
+  "keywords": [
+    "compare",
+    "pb",
+    "list"
+  ],
+  "author": "karmapa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karmapa/genComparePbList/issues"
+  },
+  "homepage": "https://github.com/karmapa/genComparePbList#readme"
+}
