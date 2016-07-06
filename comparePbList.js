@@ -1,4 +1,4 @@
-function comparePbList(text, sutraName) {
+function comparePbList(text) {
   var obj = {};
   if(undefined === text) {
     return obj;
@@ -6,7 +6,6 @@ function comparePbList(text, sutraName) {
   var arrPb = text.replace(/<(pb id="\d+.\d+[abcd]")\/>\r?\n/g, 'pbIdTag$1')
               .replace(/<(jp="\d+.\d+[abcd]") \/>/g, '$1').replace(/\r/g, '')
               .replace(/<.+?>/g, '').split('pbIdTag');
-  sutraName = sutraName || 'comparedSutra';
   for (var i = 1; i < arrPb.length; i++) {
     var newPb, volNum;
     var lastMatchPbLength = 0;
