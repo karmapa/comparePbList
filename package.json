@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/karmapa/comparePbList/issues"
   },
-  "homepage": "https://github.com/karmapa/comparePbList"
+  "homepage": "https://github.com/karmapa/comparePbList",
+  "dependencies": {
+    "ksana-indexer": "1.5.7"
+  },
+  "devDependencies": {}
 }
