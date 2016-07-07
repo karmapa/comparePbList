@@ -7,11 +7,10 @@ function comparePbList(text) {
               .replace(/<(jp="\d+.\d+[abcd]") \/>/g, '$1').replace(/\r/g, '')
               .replace(/<.+?>/g, '').split('pbIdTag');
   for (var i = 1; i < arrPb.length; i++) {
-    var newPb, volNum;
+    var newPb;
     var lastMatchPbLength = 0;
     arrPb[i].replace(/pb id="(\d+).(\d+[abcd])"/, function(match, vol, pb) {
       newPb = vol + '.' + pb;
-      volNum = vol;
       return '';
     }).replace(/pb id="\d+.\d+[ab]"/, '')
     .replace(/jp="(\d+.\d+[abcd])"(.+?[་།])/g, function(match, oldPb, matchSyl, idx) {
