@@ -1,6 +1,6 @@
 function comparePbList(text) {
   var obj = {};
-  if(undefined === text) {
+  if('string' !== typeof text) {
     return obj;
   }
   var arrPb = text.replace(/<(pb id="\d+.\d+[abcd]")\/>\r?\n/g, 'pbIdTag$1')
