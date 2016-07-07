@@ -13,10 +13,12 @@ function comparePbList(text) {
       newPb = vol + '.' + pb;
       return '';
     }).replace(/pb id="\d+.\d+[ab]"/, '')
-    .replace(/jp="(\d+.\d+[abcd])"(.+?[་།])/g, function(match, oldPb, matchSyl, idx) {
+    .replace(/(jp=")(\d+.\d+[abcd])(")(.+?[་།])/g, 
+    function(match, tagPart1, oldPb, tagPart2, matchSyl, idx) {
       obj[oldPb] =  {'pb' : newPb, 'pos' : idx - lastMatchPbLength,
                      'length' : matchSyl.length};
-      lastMatchPbLength = lastMatchPbLength + oldPb.length + 5;
+      lastMatchPbLength = lastMatchPbLength + oldPb.length +
+                          tagPart1.length + tagPart2.length;
       return '';
     });
   }
